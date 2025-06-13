@@ -24,32 +24,33 @@
     :orientation "horizontal"
     :space-evenly false
     :hexpand true
-    :valign "start"
+    :valign "center"
     ; Left group - workspace with spacer at end
     (box
       :orientation "horizontal"
       :class "left-group"
-      :valign "center"
-      :hexpand true
+      :valign "start"
+      :hexpand false
       :space-evenly false
       (workspace_widget)
-      (box :hexpand true))  ; spacer at end
+      )  ; spacer at end
     ; Center group - title with spacers at start and end  
+      (box :hexpand true)   ; spacer at start
     (box
       :orientation "horizontal"
       :class "center-group"
-      :hexpand true
-      (box :hexpand true)   ; spacer at start
+      :valign "center"
+      :hexpand false
       (title_widget)
-      (box :hexpand true))  ; spacer at end
+      )  ; spacer at end
     ; Right group - systray, bt, time with spacer at end
+      (box :hexpand true)   ; spacer at start
     (box
       :orientation "horizontal"
       :class "right-group"
-      :hexpand true
+      :hexpand false
       :valign "right"
       :space-evenly false
-      (box :hexpand true)
       (systray_widget)
       (bt_widget_display)
       (time_widget)
