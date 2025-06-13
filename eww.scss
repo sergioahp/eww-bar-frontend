@@ -1,0 +1,8 @@
+// IFAIK vars here cannot be customized over the IPC mechanism, thus we get the
+// background color of the window out of the way and instead use vars for
+// customizing the css of widgets NOT windows
+.example {
+  &.background {
+    background: none;
+  }
+}
