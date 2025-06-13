@@ -5,37 +5,55 @@
 (defvar bt_widget "(box :class \"bt-disconnected\" \"No BT\")")
 
 (defwidget time_widget []
-  (label :text time :class "time-widget" :hexpand false))
+  (label :text time :class "time-widget" :hexpand false :halign "end"))
 
 (defwidget workspace_widget []
-  (label :text current_workspace :class "workspace-widget"))
+  (label :text current_workspace :class "workspace-widget" :hexpand false :halign "center"))
 
 (defwidget systray_widget []
-  (systray :class "systray-widget"))
+  (systray :class "systray-widget" :hexpand false :halign "end"))
 
 (defwidget title_widget []
-  (label :text title :class "title-widget" :hexpand false :width: "10px"))
+  (label :text title :class "title-widget" :hexpand false :halign "end"))
 
 (defwidget bt_widget_display []
-  (literal :content bt_widget :class "bt-widget"))
+  (literal :content bt_widget :class "bt-widget" :hexpand false :halign "end"))
 
 (defwidget experimental_bar []
   (box
     :orientation "horizontal"
     :space-evenly false
     :hexpand true
-    (box :hexpand false :halign "start"
-      (time_widget))
-    (box :hexpand true)  ; left spacer
-    (box :hexpand false :halign "center"
-      (workspace_widget))
-    (box :hexpand true)  ; right spacer
-    (box :hexpand false :halign "end"
-      (systray_widget))
-    (box :hexpand false :halign "end"
-      (title_widget))
-    (box :hexpand false :halign "end"
-      (bt_widget_display))))
+    :valign "start"
+    ; Left group - workspace with spacer at end
+    (box
+      :orientation "horizontal"
+      :class "left-group"
+      :valign "center"
+      :hexpand true
+      :space-evenly false
+      (workspace_widget)
+      (box :hexpand true))  ; spacer at end
+    ; Center group - title with spacers at start and end  
+    (box
+      :orientation "horizontal"
+      :class "center-group"
+      :hexpand true
+      (box :hexpand true)   ; spacer at start
+      (title_widget)
+      (box :hexpand true))  ; spacer at end
+    ; Right group - systray, bt, time with spacer at end
+    (box
+      :orientation "horizontal"
+      :class "right-group"
+      :hexpand true
+      :valign "right"
+      :space-evenly false
+      (box :hexpand true)
+      (systray_widget)
+      (bt_widget_display)
+      (time_widget)
+      )))
 
 (defwindow experimental_window
   :monitor 0

@@ -3,6 +3,19 @@
   all: unset;
 }
 
+// Group containers with min-width
+// .left-group {
+//   min-width: 200px;
+// }
+//
+// .center-group {
+//   min-width: 300px;
+// }
+//
+// .right-group {
+//   min-width: 250px;
+// }
+
 // Floating widget pods with dynamic spacing
 .time-widget {
   background-color: rgba(102, 126, 234, 0.5);
