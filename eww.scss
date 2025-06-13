@@ -1,8 +1,53 @@
-// IFAIK vars here cannot be customized over the IPC mechanism, thus we get the
-// background color of the window out of the way and instead use vars for
-// customizing the css of widgets NOT windows
-.example {
-  &.background {
-    background: none;
-  }
+// Another way of removing background
+* {
+  all: unset;
+}
+
+// Floating widget pods with dynamic spacing
+.time-widget {
+  background-color: rgba(102, 126, 234, 0.5);
+  color: white;
+  padding: 0em 1em;
+  border-radius: 1.25em;
+  margin: 0.3em 0.5em 0em;
+  font-weight: bold;
+}
+
+.workspace-widget {
+  background-color: #f093fb;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 1.5em;
+  margin: 0.25em 0.5em;
+  font-weight: 600;
+  border: 0.2em solid #f5576c;
+}
+
+.systray-widget {
+  background-color: #4facfe;
+  padding: 0.4em 0.75em;
+  border-radius: 1em;
+  margin: 0.25em 0.5em;
+  border: 0.125em solid #00f2fe;
+}
+
+.title-widget {
+  background-color: #43e97b;
+  color: #2d3748;
+  padding: 0.5em 1em;
+  border-radius: 2em;
+  margin: 0.25em 0.5em;
+  font-weight: 500;
+  font-style: italic;
+  border: 0.125em solid #38f9d7;
+}
+
+.bt-widget {
+  background-color: #fa709a;
+  color: white;
+  padding: 0.5em 1em;
+  border-radius: 1.125em;
+  margin: 0.25em 0.5em;
+  font-weight: 500;
+  border: 0.125em solid #fee140;
 }

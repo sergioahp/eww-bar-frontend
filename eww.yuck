@@ -5,38 +5,72 @@
 (defvar bt_widget "(box :class \"bt-disconnected\" \"No BT\")")
 
 (defwidget time_widget []
-  (label :text time))
+  (label :text time :class "time-widget" :hexpand false))
 
 (defwidget workspace_widget []
-  (label :text current_workspace))
+  (label :text current_workspace :class "workspace-widget"))
 
 (defwidget systray_widget []
-  (systray))
+  (systray :class "systray-widget"))
 
 (defwidget title_widget []
-  (label :text title))
+  (label :text title :class "title-widget" :hexpand false :width: "10px"))
 
 (defwidget bt_widget_display []
-  (literal :content bt_widget))
+  (literal :content bt_widget :class "bt-widget"))
 
-(defwidget mybar []
-  (box
-    :orientation "horizontal"
-    :hexpand true
-    :style "background-color: ${bar_color};"
-    (time_widget)
-    (workspace_widget)
-    (systray_widget)
-    (title_widget)
-    (bt_widget_display)))
-
-(defwindow example
+(defwindow time_window
   :monitor 0
   :geometry (geometry :x "0px"
     :y "0px"
-    :width "100%"
+    :width "20%"
     :height "2%"
     :anchor "top center")
-  :stacking "bg"
+  :stacking "fg"
   :exclusive true
-  (mybar))
+  :namespace "bar"
+  (time_widget))
+
+(defwindow workspace_window
+  :monitor 0
+  :geometry (geometry :x "140px"
+    :y "10px"
+    :width "150px"
+    :height "40px"
+    :anchor "top left")
+  :stacking "overlay"
+  :exclusive false
+  (workspace_widget))
+
+(defwindow systray_window
+  :monitor 0
+  :geometry (geometry :x "300px"
+    :y "10px"
+    :width "100px"
+    :height "40px"
+    :anchor "top left")
+  :stacking "overlay"
+  :exclusive false
+  (systray_widget))
+
+(defwindow title_window
+  :monitor 0
+  :geometry (geometry :x "100px"
+    :y "0px"
+    :width "400px"
+    :height "40px"
+    :anchor "top center")
+  :stacking "bg"
+  :exclusive false
+  (title_widget))
+
+(defwindow bt_window
+  :monitor 0
+  :geometry (geometry :x "820px"
+    :y "10px"
+    :width "100px"
+    :height "40px"
+    :anchor "top left")
+  :stacking "overlay"
+  :exclusive false
+  (bt_widget_display))
