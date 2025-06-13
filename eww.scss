@@ -3,18 +3,6 @@
   all: unset;
 }
 
-// Group containers with min-width
-// .left-group {
-//   min-width: 200px;
-// }
-//
-// .center-group {
-//   min-width: 300px;
-// }
-//
-// .right-group {
-//   min-width: 250px;
-// }
 
 // Floating widget pods with dynamic spacing
 .time-widget {
@@ -24,43 +12,43 @@
   border-radius: 1.25em;
   margin: 0.3em 0.5em 0em;
   font-weight: bold;
+  min-width: 10em;
 }
 
 .workspace-widget {
-  background-color: #f093fb;
+  background-color: rgba(240, 147, 251, 0.5);
   color: white;
-  padding: 0.5em 1em;
-  border-radius: 1.5em;
-  margin: 0.25em 0.5em;
-  font-weight: 600;
-  border: 0.2em solid #f5576c;
+  padding: 0em 1em;
+  border-radius: 1.25em;
+  margin: 0.3em 0.5em 0em;
+  font-weight: bold;
+  min-width: 7em;
 }
 
 .systray-widget {
-  background-color: #4facfe;
-  padding: 0.4em 0.75em;
-  border-radius: 1em;
-  margin: 0.25em 0.5em;
-  border: 0.125em solid #00f2fe;
+  background-color: rgba(79, 172, 254, 0.5);
+  color: white;
+  padding: 0em 1em;
+  border-radius: 1.25em;
+  margin: 0.3em 0.5em 0em;
+  font-weight: bold;
 }
 
 .title-widget {
-  background-color: #43e97b;
-  color: #2d3748;
-  padding: 0.5em 1em;
-  border-radius: 2em;
-  margin: 0.25em 0.5em;
-  font-weight: 500;
-  font-style: italic;
-  border: 0.125em solid #38f9d7;
+  background-color: rgba(67, 233, 123, 0.5);
+  color: white;
+  padding: 0em 1em;
+  border-radius: 1.25em;
+  margin: 0.3em 0.5em 0em;
+  font-weight: bold;
+  min-width: 10em;
 }
 
 .bt-widget {
-  background-color: #fa709a;
+  background-color: rgba(250, 112, 154, 0.5);
   color: white;
-  padding: 0.5em 1em;
-  border-radius: 1.125em;
-  margin: 0.25em 0.5em;
-  font-weight: 500;
-  border: 0.125em solid #fee140;
+  padding: 0em 1em;
+  border-radius: 1.25em;
+  margin: 0.3em 0.5em 0em;
+  font-weight: bold;
 }
